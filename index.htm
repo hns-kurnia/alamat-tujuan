@@ -1,66 +1,210 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tata Tertib Ujian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Google Sans', Arial, sans-serif;
-      background: #fafcfc;
-    }
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h1 {
-      font-family: 'Merriweather', serif;
-      color: #365054;
-      font-size: 25px;
-      text-align: center;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #f8f9fa;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-    }
-    .btn {
-      display: block;
-      margin: 30px auto 0;
-      padding: 12px 30px;
-      background: #65858a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background: #2e3d40;
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tambahkan font serif dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+
+    <style>
+        .tata-tertib-container {
+            font-family: 'Google Sans', Arial, sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fafcfc;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #365054;
+        }
+
+        .header h1 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family: 'Merriweather', serif;
+        }
+
+        .header p {
+            color: #5f6368;
+            font-size: 16px;
+        }
+
+        .tata-tertib-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tata-tertib-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tata-tertib-item:hover {
+            background: #e8f0fe;
+            transform: translateY(-2px);
+        }
+
+        .item-number {
+            background: #65858a;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-content h3 {
+            margin: 0 0 8px 0;
+            color: #202124;
+            font-size: 16px;
+        }
+
+        .item-content p {
+            margin: 0;
+            color: #5f6368;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .lanjutkan-button {
+            background: #65858a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(26, 115, 232, 0.3);
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .lanjutkan-button:hover {
+            background: #2e3d40;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .tata-tertib-container {
+                padding: 15px;
+                width: 95%;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            .tata-tertib-item {
+                flex-direction: column;
+                padding: 12px;
+            }
+
+            .item-number {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+
+            .item-content h3 {
+                font-size: 15px;
+            }
+
+            .item-content p {
+                font-size: 13px;
+            }
+
+            .lanjutkan-button {
+                padding: 10px 20px;
+                font-size: 15px;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tata Tertib Ujian</h1>
-    <ul>
-      <li>Pastikan perangkat Anda siap dan koneksi stabil.</li>
-      <li>Bertanya ke pengawas jika ada kendala.</li>
-      <li>Waktu ujian akan berakhir otomatis.</li>
-      <li>Kerjakan mandiri, tanpa bantuan pihak lain.</li>
-    </ul>
-    <button class="btn" onclick="window.parent.postMessage('go-to-cbt', '*')">Lanjutkan</button>
-  </div>
+    <div class="tata-tertib-container">
+        <div class="header">
+            <h1>Tata Tertib Ujian</h1>
+            <p>Silakan baca dan pahami peraturan berikut sebelum memulai tes</p>
+        </div>
+
+        <ul class="tata-tertib-list">
+            <li class="tata-tertib-item">
+                <div class="item-number">1</div>
+                <div class="item-content">
+                    <h3>Persiapan Perangkat</h3>
+                    <p>Pastikan perangkat Anda dalam kondisi baik, dengan koneksi internet stabil.</p>
+                </div>
+            </li>
+
+            <li class="tata-tertib-item">
+                <div class="item-number">2</div>
+                <div class="item-content">
+                    <h3>Tanya Pengawas</h3>
+                    <p>Jangan sungkan untuk bertanya ke pengawas jika menemui kendala.</p>
+                </div>
+            </li>
+
+            <li class="tata-tertib-item">
+                <div class="item-number">3</div>
+                <div class="item-content">
+                    <h3>Waktu Pengerjaan</h3>
+                    <p>Perhatikan waktu yang disediakan. Tes akan otomatis berakhir ketika waktu habis.</p>
+                </div>
+            </li>
+
+            <li class="tata-tertib-item">
+                <div class="item-number">4</div>
+                <div class="item-content">
+                    <h3>Integritas Akademik</h3>
+                    <p>Kerjakan tes secara mandiri tanpa bantuan dari pihak lain atau sumber yang tidak diperbolehkan.</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="button-container">
+            <button class="lanjutkan-button" id="lanjutkanBtn">Lanjutkan</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('lanjutkanBtn').addEventListener('click', function() {
+            // Mengarahkan ke URL yang sama di tab saat ini
+            window.location.href = 'https://madrasahakademikriset.my.id/?examkey=sufrjiausyfaiY';
+        });
+    </script>
 </body>
 </html>
