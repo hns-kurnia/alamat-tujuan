@@ -1,65 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-        body {
-            background: #f0f4f8;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    body {
+      margin: 0;
+      padding: 70px;
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .tata-tertib-container {
-            font-family: 'Inter', sans-serif;
-            max-width: 700px;
-            padding: 20px;
-            background: #fafcfc;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            width: 90%;
-            z-index: 1;
-        }
+    .tata-tertib-container {
+      max-width: 700px;
+      width: 100%;
+      background: #fafcfc;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #365054;
-        }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #365054;
+    }
 
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 12px;
-            font-weight: 700;
-            font-family: 'Merriweather', serif;
-            letter-spacing: -0.5px;
-        }
+    .header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
 
-        .header p {
-            color: #5f6368;
-            font-size: 16px;
-            max-width: 80%;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
+    .header p {
+      color: #5f6368;
+      font-size: 16px;
+      max-width: 80%;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
 
-        .tata-tertib-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+    .tata-tertib-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        .tata-tertib-item {
+    .tata-tertib-item {
             align-self: center;
             align-items: center;
             display: flex;
@@ -72,240 +70,204 @@
             border: 0px solid rgba(0, 0, 0, 0.03);
         }
 
-        .tata-tertib-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-            background: #f1f5f9;
-        }
+    .tata-tertib-item:hover {
+      transform: translateY(-2px);
+      background: #f1f5f9;
+    }
 
-        .item-number {
-            background: #65858a;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 18px;
-            flex-shrink: 0;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    .item-number {
+  background: #65858a;
+  color: white;
+  width: 23px;
+  height: 23px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;           /* Jangan mengecil di flex container */
+  text-align: center;
+  overflow: hidden;         /* Hindari konten keluar kotak */
+  white-space: nowrap;      /* Hindari pemisahan baris */
+}
 
-        .item-content {
-            flex: 1;
-        }
+    .item-content h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #202124;
+    }
 
-        .item-content h3 {
-            margin: 0 0 8px 0;
-            color: #202124;
-            font-size: 16px;
-            font-weight: 600;
-        }
+    .item-content p {
+      margin: 0;
+      font-size: 14px;
+      color: #5f6368;
+      line-height: 1.5;
+    }
 
-        .item-content p {
-            margin: 0;
-            color: #5f6368;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+    .button-container {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
+    .lanjutkan-button {
+      background: #65858a;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
 
-        .lanjutkan-button {
-            background: #65858a;
-            color: white;
-            border: none;
-            padding: 14px 32px;
-            font-size: 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(101, 133, 138, 0.25);
-            width: 100%;
-            max-width: 220px;
-            letter-spacing: 0.2px;
-        }
+    .lanjutkan-button:hover {
+      background: #2e3d40;
+      transform: translateY(-2px);
+    }
 
-        .lanjutkan-button:hover {
-            background: #2e3d40;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(101, 133, 138, 0.35);
-        }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 12px;
+      color: #333;
+    }
 
-        .lanjutkan-button:active {
-            transform: translateY(0);
-        }
+    #snackbar {
+      visibility: hidden;
+      min-width: 240px;
+      background-color: #e53935;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px 20px;
+      position: fixed;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 14px;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease, bottom 0.3s ease;
+    }
 
-        footer {
-            color: black;
-            text-align: center;
-            padding: 15px 20px;
-            width: 100%;
-            margin-top: 20px;
-        }
+    #snackbar.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 300px;
+    }
 
-        footer p {
-            margin: 5px 0;
-            font-size: 11.5px;
-        }
-        
-        #snackbar {
-        visibility: hidden;
-        min-width: 240px;
-        background-color: #e53935;
-        color: #fff;
-        text-align: center;
-        border-radius: 8px;
-        padding: 12px 20px;
-        position: fixed;
-        left: 50%;
-        bottom: 30px;
-        transform: translateX(-50%);
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .header p {
         font-size: 14px;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transition: opacity 0.3s ease, bottom 0.3s ease;
-        }
+      }
 
-        #snackbar.show {
-        visibility: visible;
-        opacity: 1;
-        bottom: 40px;
-        }
+      .item-number {
+        width: 24px;
+        height: 24px;
+        font-size: 13px;
+      }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
-            }
+      .item-content h3 {
+        font-size: 15px;
+      }
 
-            .tata-tertib-container {
-                width: 95%;
-                padding: 20px;
-                margin: 10px auto;
-            }
+      .item-content p {
+        font-size: 13px;
+      }
 
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .header p {
-                font-size: 14px;
-                max-width: 100%;
-            }
-
-            .tata-tertib-item {
-                padding: 16px;
-                margin-bottom: 12px;
-            }
-
-            .item-number {
-                width: 24px;
-                height: 24px;
-                font-size: 13px;
-                margin-right: 14px;
-            }
-
-            .item-content h3 {
-                font-size: 15px;
-            }
-
-            .item-content p {
-                font-size: 13px;
-            }
-
-            .lanjutkan-button {
-                padding: 12px 24px;
-                font-size: 15px;
-                max-width: 100%;
-                border-radius: 8px;
-            }
-        }
-    </style>
+      .lanjutkan-button {
+        font-size: 15px;
+        padding: 12px 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="tata-tertib-container">
-        <div class="header">
-            <h1>Tata Tertib Ujian</h1>
-            <p>Silakan baca dan pahami peraturan berikut sebelum memulai tes</p>
-        </div>
 
-        <ul class="tata-tertib-list">
-            <li class="tata-tertib-item">
-                <div class="item-number">1</div>
-                <div class="item-content">
-                    <h3>Jangan Keluar Aplikasi</h3>
-                    <p>Anda akan otomatis logout saat anda mencoba keluar aplikasi. Termasuk berpindah jendela ke aplikasi lain</p>
-                </div>
-            </li>
-            <li class="tata-tertib-item">
-                <div class="item-number">2</div>
-                <div class="item-content">
-                    <h3>Tanya Pengawas</h3>
-                    <p>Jangan sungkan untuk bertanya ke pengawas jika menemui kendala.</p>
-                </div>
-            </li>
-            <li class="tata-tertib-item">
-                <div class="item-number">3</div>
-                <div class="item-content">
-                    <h3>Waktu Pengerjaan</h3>
-                    <p>Perhatikan waktu yang disediakan. Tes akan otomatis berakhir ketika waktu habis.</p>
-                </div>
-            </li>
-            <li class="tata-tertib-item">
-                <div class="item-number">4</div>
-                <div class="item-content">
-                    <h3>Integritas Akademik</h3>
-                    <p>Kerjakan tes secara mandiri tanpa bantuan dari pihak lain atau sumber yang tidak diperbolehkan.</p>
-                </div>
-            </li>
-        </ul>
-
-        <div class="button-container">
-            <button class="lanjutkan-button" id="lanjutkanBtn">Lanjutkan</button>
-        </div>
+  <div class="tata-tertib-container">
+    <div class="header">
+      <h1>Tata Tertib Ujian</h1>
+      <p>Silakan baca dan pahami peraturan berikut sebelum memulai tes</p>
     </div>
-    <div id="snackbar">Periksa kembali koneksi anda</div>
-    <!-- Footer di luar container -->
-    <footer>
-        <p>DTC MAN 1 Jepara &copy; 2025</p>
-        <p>Semua konten yang terkandung di dalamnya dilindungi</p>
-    </footer>
 
-    <script>
+    <ul class="tata-tertib-list">
+      <li class="tata-tertib-item">
+        <div class="item-number">1</div>
+        <div class="item-content">
+          <h3>Jangan Keluar Aplikasi</h3>
+          <p>Anda akan otomatis logout saat anda mencoba keluar aplikasi. Termasuk berpindah jendela ke aplikasi lain.</p>
+        </div>
+      </li>
+      <li class="tata-tertib-item">
+        <div class="item-number">2</div>
+        <div class="item-content">
+          <h3>Tanya Pengawas</h3>
+          <p>Jangan sungkan untuk bertanya ke pengawas jika menemui kendala.</p>
+        </div>
+      </li>
+      <li class="tata-tertib-item">
+        <div class="item-number">3</div>
+        <div class="item-content">
+          <h3>Waktu Pengerjaan</h3>
+          <p>Perhatikan waktu yang disediakan. Tes akan otomatis berakhir ketika waktu habis.</p>
+        </div>
+      </li>
+      <li class="tata-tertib-item">
+        <div class="item-number">4</div>
+        <div class="item-content">
+          <h3>Integritas Akademik</h3>
+          <p>Kerjakan tes secara mandiri tanpa bantuan dari pihak lain atau sumber yang tidak diperbolehkan.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="button-container">
+      <button class="lanjutkan-button" id="lanjutkanBtn">Lanjutkan</button>
+    </div>
+  </div>
+
+  <div id="snackbar">Periksa kembali koneksi anda</div>
+
+  <footer>
+    <p>&copy; DTC MAN 1 Jepara - 2025</p>
+    <p>Semua konten yang terkandung di dalamnya dilindungi</p>
+  </footer>
+
+  <script>
     window.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
+      e.preventDefault();
     });
 
     function showSnackbar(message) {
-        const snackbar = document.getElementById("snackbar");
-        snackbar.textContent = message;
-        snackbar.classList.add("show");
-        setTimeout(() => {
-            snackbar.classList.remove("show");
-        }, 3000); // sembunyikan setelah 3 detik
+      const snackbar = document.getElementById("snackbar");
+      snackbar.textContent = message;
+      snackbar.classList.add("show");
+      setTimeout(() => {
+        snackbar.classList.remove("show");
+      }, 3000);
     }
 
     document.getElementById('lanjutkanBtn').addEventListener('click', function () {
-        const targetURL = 'https://madrasahakademikriset.my.id/?examkey=sufrjiausyfaikuY';
+      const targetURL = 'https://madrasahakademikriset.my.id/?examkey=sufrjiausyfaikuY';
 
-        fetch(targetURL, { method: 'HEAD', mode: 'no-cors' })
-            .then(() => {
-                window.location.href = targetURL;
-            })
-            .catch(() => {
-                showSnackbar("Periksa kembali koneksi anda");
-            });
+      fetch(targetURL, { method: 'HEAD', mode: 'no-cors' })
+        .then(() => {
+          window.location.href = targetURL;
+        })
+        .catch(() => {
+          showSnackbar("Periksa kembali koneksi anda");
+        });
     });
-</script>
+  </script>
 
-    
 </body>
 </html>
