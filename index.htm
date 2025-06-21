@@ -58,17 +58,16 @@
     }
 
     .tata-tertib-item {
-            align-self: center;
-            align-items: center;
-            display: flex;
-            align-items: fleg-start;
-            margin-bottom: 15px;
-            padding:3px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 0px solid rgba(0, 0, 0, 0.03);
-        }
+      align-self: center;
+      align-items: center;
+      display: flex;
+      margin-bottom: 15px;
+      padding: 3px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 0px solid rgba(0, 0, 0, 0.03);
+    }
 
     .tata-tertib-item:hover {
       transform: translateY(-2px);
@@ -76,22 +75,22 @@
     }
 
     .item-number {
-  background: #65858a;
-  color: white;
-  width: 23px;
-  height: 23px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 14px;
-  font-weight: bold;
-  font-size: 14px;
-  flex-shrink: 0;           /* Jangan mengecil di flex container */
-  text-align: center;
-  overflow: hidden;         /* Hindari konten keluar kotak */
-  white-space: nowrap;      /* Hindari pemisahan baris */
-}
+      background: #65858a;
+      color: white;
+      width: 23px;
+      height: 23px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 14px;
+      font-weight: bold;
+      font-size: 14px;
+      flex-shrink: 0;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
     .item-content h3 {
       margin: 0 0 4px 0;
@@ -134,31 +133,6 @@
       text-align: center;
       font-size: 12px;
       color: #333;
-    }
-
-    #snackbar {
-      visibility: hidden;
-      min-width: 240px;
-      background-color: #e53935;
-      color: #fff;
-      text-align: center;
-      border-radius: 8px;
-      padding: 12px 20px;
-      position: fixed;
-      left: 50%;
-      bottom: 30px;
-      transform: translateX(-50%);
-      font-size: 14px;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      transition: opacity 0.3s ease, bottom 0.3s ease;
-    }
-
-    #snackbar.show {
-      visibility: visible;
-      opacity: 1;
-      bottom: 300px;
     }
 
     @media (max-width: 600px) {
@@ -235,8 +209,6 @@
     </div>
   </div>
 
-  <div id="snackbar">Periksa kembali koneksi anda</div>
-
   <footer>
     <p>&copy; DTC MAN 1 Jepara - 2025</p>
     <p>Semua konten yang terkandung di dalamnya dilindungi</p>
@@ -247,25 +219,14 @@
       e.preventDefault();
     });
 
-    function showSnackbar(message) {
-      const snackbar = document.getElementById("snackbar");
-      snackbar.textContent = message;
-      snackbar.classList.add("show");
-      setTimeout(() => {
-        snackbar.classList.remove("show");
-      }, 3000);
-    }
-
     document.getElementById('lanjutkanBtn').addEventListener('click', function () {
       const targetURL = 'https://madrasahakademikriset.my.id/?examkey=sufrjiausyfaikuY';
 
       fetch(targetURL, { method: 'HEAD', mode: 'no-cors' })
         .then(() => {
           window.location.href = targetURL;
-        })
-        .catch(() => {
-          showSnackbar("Periksa kembali koneksi anda");
         });
+        // Catch dihapus karena tidak ada lagi fungsi showSnackbar
     });
   </script>
 
